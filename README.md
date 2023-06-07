@@ -3,4 +3,8 @@ In this assignment, you will create a simple inventory management system which a
 
 ## Work Status
 > - Classes are complete. 
-> - When creating new element, it just stores one element
+> - Bit issue with implementing only one instance creation for the class Item
+
+
+## Screenshots
+![ScreenShot of Result](./Result.png?raw=true "Result")

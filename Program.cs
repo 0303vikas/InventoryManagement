@@ -6,8 +6,8 @@ internal class Program
         static void Main(string[] args)
         {
             Inventory inventory = new Inventory(90);
-            inventory.AddItem("books", 10);
-            inventory.AddItem("books", 5);
+            inventory.AddItem("books", 1);
+            inventory.AddItem("Cricket", 5);
             inventory.AddItem("MacBook", 10);
             inventory.AddItem("ApplePhone", 10);
             inventory.AddItem("Pendrive", 10);

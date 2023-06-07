@@ -39,31 +39,26 @@ public class Inventory
 
     public bool AddItem (string item, int itemQuantity)
     {
-        if (_items.Count == 0)
-        {
-            Item newItem = new Item(barcodeString+item,item, itemQuantity);
-            _items.Add(barcodeString+item,newItem);
-            Console.WriteLine("this line is working");
-            return true;
-        } 
-
-        int totalQuantity = 0;
+          int totalQuantity = 0;
         foreach(var element in _items.Values)
         {
-            totalQuantity += element.Quantity;
-        }
+            totalQuantity += element.Quantity;           
+        }        
 
          if ((totalQuantity + itemQuantity )> _maxCapacity)
-        {
+        {            
             return false;
+        } 
 
-        } else if (_items.ContainsKey(item))
-        {
+        if (_items.ContainsKey(barcodeString+item))
+        {           
             _items[barcodeString+item] = new Item(barcodeString+item,item, itemQuantity + _items[barcodeString+item].Quantity);
-
+            return true;
         }
+       
+        Item newItem = new Item(barcodeString+item,item, itemQuantity);
+        _items.Add(barcodeString+item,newItem);
         return true;
-
     }
 
     public bool RemoveItem (string barcode) 
